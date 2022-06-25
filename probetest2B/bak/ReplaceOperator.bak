@@ -1,0 +1,19 @@
+import java.util.*;
+
+// This class implements 'BasicOperator' and represents a simple replacement operation on a string.
+// It replaces the all occurrences of the specified 'oldChar' with 'newChar'.
+//
+public class ReplaceOperator // implements BasicOperator // TODO: uncomment clause.
+{
+
+    //TODO: define variables.
+
+    // Initializes this.
+    public ReplaceOperator(char oldChar, char newChar) {
+
+        //TODO: implement constructor.
+
+    }
+
+    //TODO: define missing parts of this class.
+}
