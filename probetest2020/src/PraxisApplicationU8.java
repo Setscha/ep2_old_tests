@@ -76,6 +76,13 @@ public class PraxisApplicationU8 {
             System.out.println(b);
         }
 
+        BodyIterator iter = bs.iterator();
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+            iter.remove();
+        }
+        System.out.println(bs.numberOfBodies());
+
     }
 
 }

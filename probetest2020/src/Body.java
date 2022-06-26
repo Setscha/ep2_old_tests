@@ -47,13 +47,35 @@ public class Body implements Cluster {
 
     @Override
     public BodyIterator iterator() {
-        return null;
+        return new BodyIterator() {
+
+            boolean returned = false;
+
+            @Override
+            public boolean hasNext() {
+                return !returned;
+            }
+
+            @Override
+            public Body next() throws NoSuchElementException {
+                if (returned) {
+                    throw new NoSuchElementException("No Body");
+                }
+                returned = true;
+                return Body.this;
+            }
+
+            @Override
+            public void remove() throws IllegalStateException {
+
+            }
+        };
     }
 
 
     @Override
     public Cluster add(Body c) throws BalancedSystemIllegalArgumentException {
-        return null;
+        return new BalancedSystem(this, c);
     }
 
     @Override
